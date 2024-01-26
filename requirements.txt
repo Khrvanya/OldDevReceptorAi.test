@@ -3,4 +3,5 @@ python-dotenv
 requests
 selenium
 webdriver-manager
+flake8
 
