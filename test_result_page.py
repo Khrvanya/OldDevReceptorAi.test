@@ -7,6 +7,7 @@ from pages.results_page import ResultsPage
 
 class TestResultsPage:
     def setup_class(self):
+        self.driver = Driver.get_firefox_driver()
         self.login_page = LoginPage()
         self.access_denied_page = AccessDeniedPage()
         self.dashboard_page = DashboardPage()
@@ -17,7 +18,6 @@ class TestResultsPage:
         self.login_page.get_sign_in_button().click()
 
     def setup_method(self):
-        self.driver = Driver.get_firefox_driver()
         self.results_page.get_logo_header_button().click()
 
     def test_radar_chart_window_is_displayed_after_click_on_name(self):
@@ -32,8 +32,8 @@ class TestResultsPage:
         assert self.results_page.get_surface_radius_range_slider().is_displayed()
 
     def teardown_method(self):
-        self.driver.quit()
+        pass
 
     def teardown_class(self):
-        pass
+        self.driver.quit()
 
