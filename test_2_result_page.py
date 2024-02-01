@@ -40,5 +40,6 @@ class TestResultsPage:
 
     def teardown_class(self):
         self.driver.quit()
+        self.driver = None
 
 
