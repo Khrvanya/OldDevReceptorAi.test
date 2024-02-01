@@ -39,8 +39,6 @@ class TestResultsPage:
         pass
 
     def teardown_class(self):
-        self.header.get_man_icon().click()
-        self.header.get_sign_out_button().click()
         self.driver.quit()
 
 
