@@ -12,6 +12,7 @@ class ResultsPage(BasePage):
         self.__radar_chart_button = None
         self.__surface_radius_range_slider = None
         self.__molecule_viewer_button = None
+        self.__x_out_button = None
 
     def get_molecule_name_button(self):
         self.__molecule_name_button = Button(self._driver.find_element(By.XPATH, "//*[text()='R02238694']"))
@@ -32,3 +33,8 @@ class ResultsPage(BasePage):
     def get_surface_radius_range_slider(self):
         self.__surface_radius_range_slider = Label(self._driver.find_element(By.ID, "Pocket-Radius-Clipping"))
         return self.__surface_radius_range_slider
+
+    def get_x_out_button(self):
+        self.__x_out_button = Button(self._driver.find_element(By.XPATH,
+                                                               "//*[@class='close-receptor-control-sidebar']"))
+        return self.__x_out_button

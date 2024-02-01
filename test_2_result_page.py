@@ -3,6 +3,7 @@ from pages.login_page import LoginPage
 from pages.access_denied_page import AccessDeniedPage
 from pages.dashboard_page import DashboardPage
 from pages.results_page import ResultsPage
+from pages.header import Header
 
 
 class TestResultsPage:
@@ -12,6 +13,7 @@ class TestResultsPage:
         self.access_denied_page = AccessDeniedPage()
         self.dashboard_page = DashboardPage()
         self.results_page = ResultsPage()
+        self.header = Header()
         self.driver.get("https://dev.receptor.ai/login")
         self.login_page.get_email_field().fill_field("yana.shevchenko@receptor.ai")
         self.login_page.get_password_field().fill_field("HG4dYfgMIrqHZED5")
@@ -30,10 +32,15 @@ class TestResultsPage:
         self.results_page.get_molecule_name_button().click()
         self.results_page.get_molecule_viewer_button().click()
         assert self.results_page.get_surface_radius_range_slider().is_displayed()
+        self.results_page.get_x_out_button().click()
+        self.results_page.get_logo_header_button().click()
 
     def teardown_method(self):
         pass
 
     def teardown_class(self):
+        self.header.get_man_icon().click()
+        self.header.get_sign_out_button().click()
         self.driver.quit()
+
 
