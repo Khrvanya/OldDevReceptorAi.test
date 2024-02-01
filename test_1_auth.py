@@ -2,6 +2,8 @@ from driver import Driver
 from pages.login_page import LoginPage
 from pages.access_denied_page import AccessDeniedPage
 from pages.dashboard_page import DashboardPage
+from pages.header import Header
+from pages.results_page import ResultsPage
 
 
 class TestLogin:
@@ -10,6 +12,8 @@ class TestLogin:
         self.login_page = LoginPage()
         self.access_denied_page = AccessDeniedPage()
         self.dashboard_page = DashboardPage()
+        self.results_page = ResultsPage()
+        self.header = Header()
 
     def setup_method(self):
         self.driver.get("https://dev.receptor.ai/login")
@@ -37,3 +41,5 @@ class TestLogin:
 
     def teardown_class(self):
         self.driver.quit()
+
+
