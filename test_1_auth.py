@@ -41,5 +41,6 @@ class TestLogin:
 
     def teardown_class(self):
         self.driver.quit()
+        self.driver = None
 
 
