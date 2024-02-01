@@ -5,7 +5,7 @@ from selenium.webdriver.chrome.webdriver import WebDriver
 class Driver:
     driver = None
 
-    @staticmethod
+    # @staticmethod
     def get_firefox_driver() -> WebDriver:
         if Driver.driver is None:
             Driver.driver = webdriver.Firefox()
