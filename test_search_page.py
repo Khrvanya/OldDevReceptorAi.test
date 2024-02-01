@@ -1,3 +1,4 @@
+# self.driver = None
 # from driver import Driver
 # from pages.login_page import LoginPage
 # from pages.access_denied_page import AccessDeniedPage
