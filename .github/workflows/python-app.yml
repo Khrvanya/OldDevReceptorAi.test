@@ -5,9 +5,9 @@ name: Python + Selenium
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "feature/fixtures" ]
   pull_request:
-    branches: [ "master" ]
+    branches: [ "feature/fixtures" ]
 
 permissions:
   contents: read
