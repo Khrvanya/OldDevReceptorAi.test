@@ -11,6 +11,8 @@ def driver(request):
     driver = webdriver.Firefox(options=opts)
     request.cls.driver = driver
 
+    driver.get("https://dev.receptor.ai/login")
+
     print("WebDriver instance created successfully")
 
     driver.implicitly_wait(10)

@@ -18,7 +18,7 @@ class TestLogin:
 
     @classmethod
     def setup_method(cls):
-        cls.driver.get("https://dev.receptor.ai/login")
+        pass
 
     def test_successful_login(self):
         self.login_page.get_email_field().fill_field("yana.shevchenko@receptor.ai")
