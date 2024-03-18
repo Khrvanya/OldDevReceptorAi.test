@@ -1,13 +1,13 @@
 from controls.button import Button
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
 from controls.label import Label
 from controls.text_box import TextBox
+import pytest
 
 
-class DashboardPage(BasePage):
+@pytest.mark.usefixtures("driver")
+class DashboardPage:
     def __init__(self):
-        super().__init__()
         self.__page_name_header = None
         self.__open_button = None
         self.__password_field = None

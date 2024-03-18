@@ -1,7 +1,9 @@
-pytest
+pytest~=7.4.3
 python-dotenv
 requests
-selenium
+selenium~=4.16.0
 webdriver-manager
 flake8
 
+
+pages~=0.3

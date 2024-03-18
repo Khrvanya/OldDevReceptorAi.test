@@ -1,13 +1,12 @@
 from controls.button import Button
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
-from controls.label import Label
 from controls.text_box import TextBox
+import pytest
 
 
-class SearchPageTargetSelection(BasePage):
+@pytest.mark.usefixtures("driver")
+class SearchPageTargetSelection:
     def __init__(self):
-        super().__init__()
         self.__uniprot_id_field = None
         self.__a0avt1_button_in_search_window = None
         self.__password_field = None

@@ -1,12 +1,12 @@
 from controls.button import Button
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
 from controls.text_box import TextBox
+import pytest
 
 
-class LoginPage(BasePage):
+@pytest.mark.usefixtures("driver")
+class LoginPage:
     def __init__(self):
-        super().__init__()
         self.__sign_in_button = None
         self.__email_field = None
         self.__password_field = None

@@ -1,11 +1,11 @@
 from controls.button import Button
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
+import pytest
 
 
-class AccessDeniedPage(BasePage):
+@pytest.mark.usefixtures("driver")
+class AccessDeniedPage:
     def __init__(self):
-        super().__init__()
         self.__back_to_login_page_button = None
 
     def get_back_to_login_page_button(self):

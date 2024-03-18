@@ -1,22 +1,24 @@
-from driver import Driver
-from pages.login_page import LoginPage
-from pages.access_denied_page import AccessDeniedPage
-from pages.dashboard_page import DashboardPage
-from pages.header import Header
-from pages.results_page import ResultsPage
+from page_names.login_page import LoginPage
+from page_names.access_denied_page import AccessDeniedPage
+from page_names.dashboard_page import DashboardPage
+from page_names.header import Header
+from page_names.results_page import ResultsPage
+import pytest
 
 
+@pytest.mark.usefixtures("driver")
 class TestLogin:
-    def setup_class(self):
-        self.driver = Driver.get_firefox_driver()
-        self.login_page = LoginPage()
-        self.access_denied_page = AccessDeniedPage()
-        self.dashboard_page = DashboardPage()
-        self.results_page = ResultsPage()
-        self.header = Header()
+    @classmethod
+    def setup_class(cls):
+        cls.login_page = LoginPage()
+        cls.access_denied_page = AccessDeniedPage()
+        cls.dashboard_page = DashboardPage()
+        cls.results_page = ResultsPage()
+        cls.header = Header()
 
-    def setup_method(self):
-        self.driver.get("https://dev.receptor.ai/login")
+    @classmethod
+    def setup_method(cls):
+        cls.driver.get("https://dev.receptor.ai/login")
 
     def test_successful_login(self):
         self.login_page.get_email_field().fill_field("yana.shevchenko@receptor.ai")
@@ -39,8 +41,6 @@ class TestLogin:
     def teardown_method(self):
         pass
 
-    def teardown_class(self):
-        self.driver.quit()
 
 
 

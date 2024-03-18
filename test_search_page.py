@@ -1,10 +1,10 @@
 # from driver import Driver
-# from pages.login_page import LoginPage
-# from pages.access_denied_page import AccessDeniedPage
-# from pages.dashboard_page import DashboardPage
-# from pages.results_page import ResultsPage
-# from pages.search_page_with_viewer import SearchPageWithViewer
-# from pages.search_page_target_selection import SearchPageTargetSelection
+# from page_names.login_page import LoginPage
+# from page_names.access_denied_page import AccessDeniedPage
+# from page_names.dashboard_page import DashboardPage
+# from page_names.results_page import ResultsPage
+# from page_names.search_page_with_viewer import SearchPageWithViewer
+# from page_names.search_page_target_selection import SearchPageTargetSelection
 #
 #
 # class TestSearchPage:

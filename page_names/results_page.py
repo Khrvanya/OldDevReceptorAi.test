@@ -1,12 +1,12 @@
 from controls.button import Button
 from selenium.webdriver.common.by import By
-from pages.base_page import BasePage
 from controls.label import Label
+import pytest
 
 
-class ResultsPage(BasePage):
+@pytest.mark.usefixtures("driver")
+class ResultsPage:
     def __init__(self):
-        super().__init__()
         self.__molecule_name_button = None
         self.__logo_header_button = None
         self.__radar_chart_button = None
